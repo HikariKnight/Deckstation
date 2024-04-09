@@ -1,8 +1,10 @@
 # Deckstation, a bazzite for workstations
 This is my own personal image meant for workstations, not really meant for others to use, but you are free to use it.
 However it will stay tailored for my own needs.
+Even though I am a Bazzite maintainer, this setup is unsupported and the `deckstation` & `deckstation-deck` images are provided as is and support will not be provided.
 
-This project uses BlueBuild as the changes i need are pretty minor from upstream.
+This project uses BlueBuild as the changes I need are pretty minor from upstream.
+Nvidia GPUs **will not be supported**.
 
 # BlueBuild Template &nbsp; [![build-ublue](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
 
