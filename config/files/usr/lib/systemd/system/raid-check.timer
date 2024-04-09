@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly RAID setup health check
+
+[Timer]
+OnCalendar=Sat *-*-* 12:00:00
+Persistent=true
+AccuracySec=24h
+
+[Install]
+WantedBy=timers.target

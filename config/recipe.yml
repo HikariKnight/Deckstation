@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
-name: template
+name: deckstation
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: A workstation oriented version of bazzite desktop with native steam and gamescope
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -22,6 +22,10 @@ modules:
     install:
       # - micro
       # - starship
+      - ibus-uniemoji
+      - qemu
+      - virt-manager
+      - edk2-ovmf
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -36,7 +40,7 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        # - org.mozilla.firefox
+        - org.mozilla.firefox
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
@@ -46,4 +50,9 @@ modules:
       # - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
+  - type: script
+    scripts:
+      # Custom changes for deckstation
+      - deckstation-setup.sh
 
