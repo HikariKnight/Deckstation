@@ -1,3 +1,9 @@
+# Deckstation, a bazzite for workstations
+This is my own personal image meant for workstations, not really meant for others to use, but you are free to use it.
+However it will stay tailored for my own needs.
+
+This project uses BlueBuild as the changes i need are pretty minor from upstream.
+
 # BlueBuild Template &nbsp; [![build-ublue](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
