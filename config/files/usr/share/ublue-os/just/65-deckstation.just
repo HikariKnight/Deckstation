@@ -8,7 +8,7 @@ tr-kargs:
           --append-if-missing="usbcore.autosuspend=-1" \
           --append-if-missing="pcie_aspm=off"
 
-# Enable VFIO on the system if virtualization is enabled
+# VFIO tailored for HikariKnight's system
 my-vfio:
     #!/usr/bin/env bash
     echo "Enabling VFIO..."

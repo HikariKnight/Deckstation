@@ -54,6 +54,8 @@ modules:
   - type: script
     scripts:
       # Custom changes for deckstation
+      - sddm/disable-sddm.sh
+      - sddm/disable-sddm-virtualkbd.sh
+      - add-justfile.sh
       - deckstation-setup.sh
-      - disable-sddm-virtualkbd.sh
 

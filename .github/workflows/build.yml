@@ -22,7 +22,8 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here 
-          - recipe.yml
+          - recipes/deckstation.yml
+          - recipes/deckstation-deck.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
