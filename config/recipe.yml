@@ -55,4 +55,5 @@ modules:
     scripts:
       # Custom changes for deckstation
       - deckstation-setup.sh
+      - disable-sddm-virtualkbd.sh
 
