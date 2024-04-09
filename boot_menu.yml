@@ -1,0 +1,5 @@
+ublue_variants:
+  - label: HikariKnight/deckstation
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: deckstation
