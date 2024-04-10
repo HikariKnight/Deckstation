@@ -55,5 +55,5 @@ modules:
     scripts:
       # Custom changes for deckstation
       - sddm/disable-sddm.sh
-      - add-justfile.sh
-      - deckstation-setup.sh
+      - main/add-justfile.sh
+      - main/deckstation-setup.sh
