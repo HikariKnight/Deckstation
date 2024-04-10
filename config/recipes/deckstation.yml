@@ -58,4 +58,5 @@ modules:
       - sddm/disable-sddm-virtualkbd.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
+      - testing/kvmfr.sh
 
