@@ -25,6 +25,10 @@ jobs:
           - recipes/deckstation.yml
           - recipes/deckstation-deck.yml
     steps:
+       # Bazzite big, must optimize space
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@v7
+
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1.5
