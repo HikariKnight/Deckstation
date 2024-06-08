@@ -53,6 +53,6 @@ modules:
   - type: script
     scripts:
       # Custom changes for deckstation
-      - sddm/disable-sddm.sh
+      - sddm/enable-sddm.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
