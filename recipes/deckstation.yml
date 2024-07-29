@@ -22,7 +22,6 @@ modules:
     install:
       # - micro
       # - starship
-      - ibus-uniemoji
       - qemu
       - virt-manager
       - edk2-ovmf
