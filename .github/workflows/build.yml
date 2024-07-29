@@ -22,8 +22,8 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here 
-          - recipes/deckstation.yml
-          - recipes/deckstation-deck.yml
+          - deckstation.yml
+          - deckstation-deck.yml
     steps:
        # Bazzite big, must optimize space
       - name: Maximize build space
