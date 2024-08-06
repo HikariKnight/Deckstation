@@ -1,0 +1,10 @@
+[Unit]
+Description=Create a default snapper config if snapper is unconfigured
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/bazzite-configure-snapper
+
+[Install]
+WantedBy=multi-user.target
