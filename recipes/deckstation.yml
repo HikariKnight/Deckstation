@@ -64,3 +64,4 @@ modules:
       - sddm/disable-sddm-virtualkbd.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
+      - fixes/btrfs-assistant.sh

@@ -62,3 +62,4 @@ modules:
       - sddm/enable-sddm.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
+      - fixes/btrfs-assistant.sh
