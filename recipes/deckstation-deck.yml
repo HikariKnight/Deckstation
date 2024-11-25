@@ -5,7 +5,7 @@ description: bazzite-deck with SDDM enabled
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: 40 # latest is also supported if you want new updates ASAP
+image-version: 41 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -19,7 +19,6 @@ modules:
       - qemu
       - virt-manager
       - edk2-ovmf
-      - btrfs-assistant
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -49,10 +48,10 @@ modules:
       remove:
       # - org.gnome.eog
 
-  - type: systemd
-    system:
-      enabled:
-        - bazzite-snapper-setup.service
+  #- type: systemd
+  #  system:
+  #    enabled:
+  #      - bazzite-snapper-setup.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
@@ -62,4 +61,3 @@ modules:
       - sddm/enable-sddm.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
-      - fixes/btrfs-assistant.sh
