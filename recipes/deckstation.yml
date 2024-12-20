@@ -17,7 +17,6 @@ modules:
       # - micro
       # - starship
       - qemu
-      - virt-manager
       - edk2-ovmf
       - samba
     remove:

@@ -17,7 +17,6 @@ modules:
       # - micro
       # - starship
       - qemu
-      - virt-manager
       - edk2-ovmf
     remove:
       # example: removing firefox (in favor of the flatpak)
