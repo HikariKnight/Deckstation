@@ -23,6 +23,7 @@ jobs:
         recipe:
           # !! Add your recipes here 
           - deckstation.yml
+          - deckstation-testing.yml
           - deckstation-deck.yml
     steps:
        # Bazzite big, must optimize space
