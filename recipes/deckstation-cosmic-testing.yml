@@ -1,0 +1,63 @@
+# image will be published to ghcr.io/<user>/<name>
+name: deckstation-cosmic-testing
+# description will be included in the image's metadata
+description: A workstation oriented version of bazzite desktop with native steam and gamescope
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bazzite-deck
+image-version: testing # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: rpm-ostree
+    repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    install:
+      # - micro
+      # - starship
+      - samba
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      # - firefox
+      # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: files
+    files:
+      - source: system  # copies files/system/ into your image's /.
+        destination: /  # put configuration files you want in /etc/ on a booted system 
+                        # in /usr/etc/ in the image. read more in files module reference.
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      # repo-name: flathub
+      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      install:
+        - org.mozilla.firefox
+        # - org.gnome.Loupe
+        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
+      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
+      # Installing different branches of the same Flatpak is not supported.
+      remove:
+      # - org.gnome.eog
+
+  #- type: systemd
+  #  system:
+  #    enabled:
+  #      - bazzite-snapper-setup.service
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
+  - type: script
+    scripts:
+      # Custom changes for deckstation
+      - sddm/enable-sddm.sh
+      - sddm/disable-sddm-virtualkbd.sh
+      - main/add-justfile.sh
+      - main/deckstation-setup.sh
+      - main/install-cosmic.sh

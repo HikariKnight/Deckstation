@@ -25,6 +25,8 @@ jobs:
           - deckstation.yml
           - deckstation-testing.yml
           - deckstation-deck.yml
+          - deckstation-cosmic.yml
+          - deckstation-cosmic-testing.yml
     steps:
        # Bazzite big, must optimize space
       - name: Maximize build space
