@@ -16,9 +16,6 @@ modules:
     install:
       # - micro
       # - starship
-      - qemu
-      - edk2-ovmf
-      - libvirt
       - samba
     remove:
       # example: removing firefox (in favor of the flatpak)
