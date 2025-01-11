@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: deckstation-deck
 # description will be included in the image's metadata
@@ -16,9 +17,6 @@ modules:
     install:
       # - micro
       # - starship
-      - qemu
-      - edk2-ovmf
-      - libvirt
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
