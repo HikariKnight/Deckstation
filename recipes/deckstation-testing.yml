@@ -1,12 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: deckstation-testing
+name: deckstation
 # description will be included in the image's metadata
 description: A workstation oriented version of bazzite desktop with native steam and gamescope
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck
 image-version: testing # latest is also supported if you want new updates ASAP
+alt-tags: 
+  - testing
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
