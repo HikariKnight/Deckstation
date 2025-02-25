@@ -30,7 +30,7 @@ jobs:
     steps:
        # Bazzite big, must optimize space
       - name: Maximize build space
-        uses: ublue-os/remove-unwanted-software@v8
+        uses: ublue-os/remove-unwanted-software@v9
 
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
