@@ -16,7 +16,7 @@ jobs:
       image: fedora:39
       options: --privileged
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Generate ISO
         uses: ublue-os/isogenerator-old@v2.3.1
         id: isogenerator
