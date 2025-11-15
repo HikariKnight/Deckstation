@@ -5,4 +5,4 @@ set -oue pipefail
 echo 'import "/usr/share/ublue-os/just/65-deckstation.just"' >> /usr/share/ublue-os/justfile
 
 # Generare bash completion
-just --completions bash | sed -E 's/([\(_" ])just/\1ujust/g' > /usr/share/bash-completion/completions/ujust
+#just --completions bash | sed -E 's/([\(_" ])just/\1ujust/g' > /usr/share/bash-completion/completions/ujust
