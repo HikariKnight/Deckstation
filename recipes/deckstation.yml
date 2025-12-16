@@ -6,7 +6,7 @@ description: A workstation oriented version of bazzite desktop with native steam
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: 42 # latest is also supported if you want new updates ASAP
+image-version: stable-43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -23,8 +23,7 @@ modules:
       - samba
       - klassy
       - kwin-effect-roundcorners
-    remove:
-      - libtpms
+    remove: []
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       # - firefox
