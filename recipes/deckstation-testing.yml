@@ -5,8 +5,8 @@ name: deckstation
 description: A workstation oriented version of bazzite desktop with native steam and gamescope
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-dx
-image-version: latest # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bazzite-deck
+image-version: testing # latest is also supported if you want new updates ASAP
 alt-tags: 
   - testing
 
@@ -67,5 +67,7 @@ modules:
   - type: script
     scripts:
       # Custom changes for deckstation
+      - sddm/enable-sddm.sh
+      - sddm/disable-sddm-virtualkbd.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh
