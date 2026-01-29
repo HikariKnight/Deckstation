@@ -45,3 +45,25 @@ my-vfio:
       echo "Enable virtualization with just enable-virtualization before running just enable-vfio."
     fi
 
+# Turn automatic updates on or off
+_toggle-updates ACTION="prompt":
+    #!/usr/bin/bash
+    source /usr/lib/ujust/ujust.sh
+    CURRENT_STATE="$(systemctl is-enabled uupd.timer)"
+    OPTION={{ ACTION }}
+    if [ "$OPTION" == "prompt" ]; then
+      echo "Automatic updates are currently: ${bold}${CURRENT_STATE^}${normal}"
+      echo "Enable or Disable automatic updates?"
+      OPTION=$(ugum choose Enable Disable)
+    elif [ "$OPTION" == "help" ]; then
+      echo "Usage: ujust toggle-updates <option>"
+      echo "  <option>: Specify the quick option - 'enable' or 'disable'"
+      echo "  Use 'enable' to Enable automatic updates."
+      echo "  Use 'disable' to Disable automatic updates."
+      exit 0
+    fi
+    if [ "${OPTION,,}" == "enable" ]; then
+      sudo systemctl enable uupd.timer
+    elif [ "${OPTION,,}" == "disable" ]; then
+      sudo systemctl disable uupd.timer
+    fi
