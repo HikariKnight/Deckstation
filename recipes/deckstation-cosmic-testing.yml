@@ -25,6 +25,16 @@ modules:
       - samba
       - klassy
       - kwin-effect-roundcorners
+      - rocm-hip
+      - rocm-opencl
+      - rocm-clinfo
+      - rocm-smi
+      - qemu
+      - libvirt
+      - qemu-kvm
+      - virt-manager
+      - edk2-ovmf
+      - guestfs-tools
     remove: []
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
