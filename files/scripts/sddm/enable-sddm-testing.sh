@@ -10,3 +10,4 @@ fi
 
 # Undo some bazzite-deck specific services we do not need anymore
 #systemctl disable bazzite-autologin.service
+systemctl enable plasmalogin
