@@ -5,8 +5,8 @@ name: deckstation
 description: A workstation oriented version of bazzite desktop with native steam and gamescope
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: stable-43 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bazzite-dx
+image-version: stable # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -33,11 +33,17 @@ modules:
       - virt-manager
       - edk2-ovmf
       - guestfs-tools
-    remove: []
+    remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       # - firefox
       # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      - code
 
   - type: files
     files:
@@ -75,7 +81,7 @@ modules:
   - type: script
     scripts:
       # Custom changes for deckstation
-      - sddm/enable-sddm.sh
+      - sddm/enable-sddm-testing.sh
       - sddm/disable-sddm-virtualkbd.sh
       - main/add-justfile.sh
       - main/deckstation-setup.sh

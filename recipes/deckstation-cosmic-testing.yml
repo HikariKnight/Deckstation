@@ -5,8 +5,8 @@ name: deckstation-cosmic
 description: A workstation oriented version of bazzite desktop with native steam and gamescope
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-deck
-image-version: testing # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/bazzite-dx
+image-version: stable # latest is also supported if you want new updates ASAP
 alt-tags: 
   - testing
 
@@ -35,13 +35,17 @@ modules:
       - virt-manager
       - edk2-ovmf
       - guestfs-tools
-      - plasma-login-manager
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       # - firefox
       # - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-      - sddm
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose-plugin
+      - code
 
   - type: files
     files:
