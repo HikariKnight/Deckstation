@@ -44,6 +44,7 @@ modules:
       - docker-ce-cli
       - docker-compose-plugin
       - code
+      - kwrite
 
   - type: files
     files:
